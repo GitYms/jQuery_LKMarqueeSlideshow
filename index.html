@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery_无缝滚动轮播效果插件封装</title>
+</head>
+
+<body>
+
+<div class="slide_container slide_demo">
+    <div class="slide_wrapper">
+        <div class="slide_item" style="background-color: #4390ee;">item1</div>
+        <div class="slide_item" style="background-color: #ff8604;">item2</div>
+        <div class="slide_item" style="background-color: #49a430;">item3</div>
+    </div>
+    <div class="arrow">
+        <i class="arrow_left">&lt;&lt;</i>
+        <i class="arrow_right">&gt;&gt;</i>
+    </div>
+</div>
+
+<style>
+.slide_container { position: relative; overflow: hidden; width: 600px; margin: 20px auto; }
+.slide_wrapper { position: absolute; top: 0; left: 0; overflow: hidden; }
+.slide_item { font-size: 24px; line-height: 250px; overflow: hidden; height: 250px; text-align: center; }
+.arrow i { position: absolute; z-index: 1; top: 50%; display: inline-block; cursor: pointer; }
+.arrow .arrow_left { left: 20px; }
+.arrow .arrow_right { right: 20px; }
+</style>
+
+<script src="jquery-1.8.3.min.js"></script>
+<script src="LKMarqueeSlideshow.js"></script>
+<script>
+$(function() {
+    $(".slide_demo").LKMarqueeSlideshow({
+        speed: 2,
+        slidesPerView: 1,
+        loopAdditionalSlides: 1,
+        // mode: "vertical",
+        changeType: "mouseenter",
+        arrow_left: ".arrow_left",
+        arrow_right: ".arrow_right"
+    });
+});
+</script>
+
+
+</body>
+
+</html>
